@@ -1,0 +1,222 @@
+/* ============================================
+   Pan & Aroma - Tema Personalizado
+   Colores Principales: 
+   - Principal: #D4956E (marrón pastel)
+   - Secundario: #E8D4C4 (beige claro)
+   - Acento: #C67C4E (marrón oscuro)
+   ============================================ */
+
+:root {
+    --pan-aroma-primary: #D4956E;
+    --pan-aroma-secondary: #E8D4C4;
+    --pan-aroma-accent: #C67C4E;
+    --pan-aroma-light: #F5F0EB;
+    --pan-aroma-dark: #6B4423;
+}
+
+/* Botones Principales */
+.btn-primary, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--pan-aroma-primary) !important;
+    border-color: var(--pan-aroma-primary) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--pan-aroma-accent) !important;
+    border-color: var(--pan-aroma-accent) !important;
+}
+
+/* Nav Lateral y Header */
+.o_navbar {
+    background-color: var(--pan-aroma-primary) !important;
+}
+
+.o_menu_toggle, .o_menu_sections {
+    background-color: var(--pan-aroma-light) !important;
+}
+
+.o_menu_sections .o_menu_item:hover {
+    background-color: var(--pan-aroma-secondary) !important;
+}
+
+.o_menu_sections .o_sub_menu {
+    background-color: #FFFFFF !important;
+    border-left: 3px solid var(--pan-aroma-primary) !important;
+}
+
+/* Header */
+.o_main_navbar {
+    background-color: var(--pan-aroma-primary) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Inputs y Campos de Formulario */
+.form-control, .form-control:focus {
+    border-color: var(--pan-aroma-secondary) !important;
+}
+
+.form-control:focus {
+    border-color: var(--pan-aroma-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(212, 149, 110, 0.25) !important;
+}
+
+/* Tabs */
+.nav-tabs .nav-link.active {
+    border-bottom-color: var(--pan-aroma-primary) !important;
+    color: var(--pan-aroma-primary) !important;
+}
+
+.nav-tabs .nav-link {
+    color: #666 !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--pan-aroma-primary) !important;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: var(--pan-aroma-light) !important;
+}
+
+.breadcrumb .breadcrumb-item.active {
+    color: var(--pan-aroma-primary) !important;
+}
+
+/* Badges y Tags */
+.badge-primary {
+    background-color: var(--pan-aroma-primary) !important;
+}
+
+.badge-secondary {
+    background-color: var(--pan-aroma-secondary) !important;
+    color: var(--pan-aroma-dark) !important;
+}
+
+/* Footer */
+.o_footer {
+    background-color: var(--pan-aroma-light) !important;
+    border-top: 2px solid var(--pan-aroma-primary) !important;
+}
+
+/* Modal Dialogs */
+.modal-header {
+    background-color: var(--pan-aroma-primary) !important;
+    color: white !important;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Tablas */
+.table thead th {
+    background-color: var(--pan-aroma-secondary) !important;
+    color: var(--pan-aroma-dark) !important;
+    font-weight: 600;
+    border-bottom: 2px solid var(--pan-aroma-primary) !important;
+}
+
+.table tbody tr:hover {
+    background-color: var(--pan-aroma-light) !important;
+}
+
+/* Cards */
+.card {
+    border: 1px solid var(--pan-aroma-secondary) !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card-header {
+    background-color: var(--pan-aroma-secondary) !important;
+    border-bottom: 2px solid var(--pan-aroma-primary) !important;
+    color: var(--pan-aroma-dark) !important;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    border: 1px solid var(--pan-aroma-secondary) !important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--pan-aroma-light) !important;
+    color: var(--pan-aroma-primary) !important;
+}
+
+.dropdown-item.active, .dropdown-item.active:hover {
+    background-color: var(--pan-aroma-primary) !important;
+}
+
+/* Alertas */
+.alert-info {
+    background-color: rgba(212, 149, 110, 0.1) !important;
+    border-color: var(--pan-aroma-primary) !important;
+    color: var(--pan-aroma-dark) !important;
+}
+
+.alert-warning {
+    background-color: rgba(198, 124, 78, 0.1) !important;
+    border-color: var(--pan-aroma-accent) !important;
+    color: var(--pan-aroma-dark) !important;
+}
+
+/* Campos Readonly */
+.field.oe_readonly input, .field.oe_readonly textarea, .field.oe_readonly select {
+    background-color: var(--pan-aroma-light) !important;
+}
+
+/* Progress Bars */
+.progress {
+    background-color: var(--pan-aroma-light) !important;
+}
+
+.progress-bar {
+    background-color: var(--pan-aroma-primary) !important;
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--pan-aroma-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pan-aroma-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pan-aroma-accent);
+}
+
+/* Links */
+a {
+    color: var(--pan-aroma-primary) !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--pan-aroma-accent) !important;
+    text-decoration: underline;
+}
+
+/* Título de Documentos */
+.oe_page_header h1, .o_form_sheet_header h1 {
+    color: var(--pan-aroma-primary) !important;
+    border-bottom: 2px solid var(--pan-aroma-secondary) !important;
+    padding-bottom: 10px;
+}
+
+/* Background General */
+body {
+    background-color: #FAFAFA !important;
+}
+
+.o_content {
+    background-color: #FAFAFA !important;
+}
