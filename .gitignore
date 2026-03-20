@@ -9,6 +9,7 @@ __pycache__/
 # Odoo volumes (datos locales de Docker, no subir)
 odoo/addons/
 *.log
+*.dump
 
 # Docker
 .env
