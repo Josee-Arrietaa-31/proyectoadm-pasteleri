@@ -2,167 +2,113 @@
 
 ## ⚙️ Requisitos Previos
 
-Antes de empezar, asegúrate de tener instalado:
+1. **Docker Desktop** → https://www.docker.com/products/docker-desktop
+2. **Git** → https://git-scm.com/downloads
 
-- **Docker Desktop** (incluye Docker y Docker Compose)
-  - Windows: https://www.docker.com/products/docker-desktop
-  - Mac/Linux: https://www.docker.com/products/docker-desktop
-- **Git** (para clonar el repositorio)
-  - https://git-scm.com/downloads
-- **PowerShell** (en Windows) o **Terminal** (Mac/Linux)
+**Una vez instalados, abre PowerShell o Terminal y sigue:**
 
-## 📥 Paso 1: Clonar el Repositorio
+---
 
-Abre una terminal/PowerShell y ejecuta:
+## 🚀 3 Pasos Para Correr Odoo (5 minutos total)
+
+### **Paso 1: Clonar Repositorio**
 
 ```powershell
 git clone https://github.com/Josee-Arrietaa-31/proyectoadm-pasteleri.git
-cd proyectoadm-pasteleri
+cd proyectoadm-pasteleri/odoo
 ```
 
-## 🚀 Paso 2: Levantar Odoo con Docker
-
-### En Windows (PowerShell):
+### **Paso 2: Levantar Odoo**
 
 ```powershell
-cd odoo
 docker compose up -d
 ```
 
-### En Mac/Linux (Terminal):
+**Espera 20-30 segundos** a que se inicie.
 
-```bash
-cd odoo
-docker compose up -d
-```
+### **Paso 3: Abrir Odoo**
 
-**Espera 20-30 segundos** a que Docker inicie los contenedores.
-
-## ✅ Verificar que Está Funcionando
-
-```powershell
-docker ps
-```
-
-Deberías ver 2 contenedores corriendo:
-- `odoo-web-1` (puerto 8069)
-- `odoo-db-1` (PostgreSQL)
-
-## 🌐 Acceder a Odoo
-
-Abre tu navegador en:
+Abre tu navegador en: **http://localhost:8069**
 
 ```
-http://localhost:8069
+Email: andalfaro123@gmail.com
+Contraseña: Gusano1199
 ```
 
-### Credenciales por Defecto:
-
-| Campo | Valor |
-|-------|-------|
-| Email | `andalfaro123@gmail.com` |
-| Contraseña | `Gusano1199` |
-
-## 📊 Verifica que los Datos Estén Cargados
-
-Una vez dentro de Odoo:
-
-1. **Ve a Inventario → Productos**
-   - Deberías ver **30 productos** (pasteles, panes, repostería)
-
-2. **Ve a Ventas → Pedidos**
-   - Deberías ver **1 pedido** (S00001 de Laura Rodríguez por ₡11,300)
-
-3. **Ve a Configuración → Compañías**
-   - Deberías ver **Pan & Aroma** con dirección y contacto
-
-Si ves todo esto, ¡**ÉXITO**! La BD está lista.
+**¡Listo! Ya está funcionando.** ✅
 
 ---
 
-## 🛑 Detener Odoo
+## ✅ Verifica que los Datos Estén Ahí
 
-Cuando termines, ejecuta:
+Una vez en Odoo, ve a:
+
+1. **Inventario → Productos**
+   - Deberías ver **30 productos**
+
+2. **Ventas → Pedidos**
+   - Deberías ver **1 orden** (S00001)
+
+3. **Configuración → Compañías**
+   - Deberías ver **Pan & Aroma**
+
+Si ves todo esto, ¡**PERFECT**! 🎉
+
+---
+
+## 🛑 Para Detener Odoo
 
 ```powershell
-cd odoo
+cd proyectoadm-pasteleri/odoo
 docker compose down
 ```
 
-Esto detiene los contenedores pero **mantiene los datos locales** en el volumen Docker.
+Los datos se guardan automáticamente en un volumen Docker.
 
 ---
 
-## 🔄 Levantar de Nuevo
-
-Para volver a usar Odoo después:
+## 🔄 Para Volver a Usar Después
 
 ```powershell
 cd proyectoadm-pasteleri/odoo
 docker compose up -d
 ```
 
-Los datos estarán intactos porque están en un volumen persistente.
+Los datos estarán intactos.
 
 ---
 
-## ⚠️ Problemas Comunes
+## 📊 Datos Disponibles
 
-### Error: "Docker daemon is not running"
-**Solución:** Abre Docker Desktop (debe estar ejecutándose antes de usar Docker)
-
-### Error: "Port 8069 already in use"
-**Solución:** Otro servicio está usando ese puerto. Ejecuta:
-```powershell
-docker compose down
-docker compose up -d
-```
-
-### Odoo no abre (errores de conexión)
-**Solución:** Espera más tiempo. A veces tarda 30-40 segundos en estar listo.
-
-### No veo los 30 productos
-**Solución:** La BD podría no estar restaurada correctamente. Contacta al equipo de desarrollo.
+- ✅ **30 productos** (pasteles, panes, repostería)
+- ✅ **711 unidades** de stock
+- ✅ **13 categorías** con 7 subcategorías de Pan
+- ✅ **1 orden de venta** (S00001 - ₡11,300)
+- ✅ **Pan & Aroma** empresa configurada
 
 ---
 
-## 📁 Estructura del Proyecto
+## ❌ Problemas Comunes
 
-```
-proyectoadm-pasteleri/
-├── odoo/                          ← AQUÍ está todo
-│   ├── docker-compose.yml         ← Configuración Docker
-│   ├── config/
-│   │   └── odoo.conf              ← Credenciales Odoo
-│   ├── custom_theme/              ← Tema personalizado (opcional)
-│   ├── crear_productos.py         ← Scripts de datos
-│   ├── diagnostico_bd.py          ← Verificación BD
-│   └── ...otros scripts...
-├── .git/                          ← Control de versiones
-├── README.md                       ← Este archivo
-└── ...
-```
+### "Docker daemon is not running"
+→ Abre Docker Desktop
+
+### "Port 8069 already in use"
+→ Ejecuta: `docker compose down` y luego `docker compose up -d`
+
+### "No veo los 30 productos"
+→ Espera 30 segundos más. Si sigue sin aparecer, contacta al equipo.
 
 ---
 
 ## 🎓 Para la Presentación al Profesor
 
-**Lo que mostrar en Odoo:**
-
-1. **Inventario → Productos** - 30 productos con descripciones
-2. **Inventario → Categorías** - 7 subcategorías de Pan
-3. **Ventas → Pedidos** - Orden S00001 confirmada
-4. **Dashboard** - Widgets con información de empresa
-5. **Configuración → Compañías** - Pan & Aroma con datos completos
+Mostrar en Odoo:
+1. Inventario → Productos (30 items con descripción e imagen)
+2. Inventario → Categorías (jerarquía con 7 subcategorías de Pan)
+3. Ventas → Pedidos (orden S00001 confirmada)
+4. Configuración → Compañías (Pan & Aroma con datos)
 
 ---
 
-## 📞 Contacto
-
-Si hay problemas:
-- Revisa el archivo `INSTRUCTIVO_COMPANEROS_ODOO.md`
-- Contacta al equipo de desarrollo del proyecto
-
----
-
-**¡Listo! Ahora puedes demostrar el sistema Odoo funcional.** 🎉
+**¡Listo! Ya puedes demostrar el sistema.** 🎉
